@@ -27,6 +27,23 @@ Hostinger only runs the Next.js app.
    | Build command | `npm run build` |
    | Start command | `npm start` |
 
+### Why the build uses Webpack and a `.mjs` config
+
+Hostinger's shared build host ships an older glibc (< 2.29), so Next.js
+cannot load its native SWC compiler there and falls back to the WASM
+build. Two things break under WASM, and the repo is set up to avoid
+both:
+
+- **Turbopack needs native bindings** → `npm run build` runs
+  `next build --webpack`. (`npm run dev` still uses Turbopack locally.)
+- **A TypeScript `next.config.ts` can't be transpiled** → the config is
+  plain ESM, `next.config.mjs` (types in `next.config.d.mts`).
+
+The build log will still show `Attempted to load @next/swc-linux-x64-gnu
+… GLIBC_2.29 not found` — that warning is expected and harmless. To
+reproduce Hostinger's conditions locally:
+`NEXT_TEST_WASM=1 npm run build`.
+
 ## 2. Environment variables
 
 Add these in hPanel (the app's **Environment variables** section). Copy
