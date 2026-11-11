@@ -295,7 +295,7 @@ export function Sidebar({ open = false, onClose }: SidebarProps) {
 
         {/* User section */}
         <div className="shrink-0 border-t border-border p-3">
-          <Credits className="mb-2 px-3 text-[11px]" linkClassName="text-foreground/80 hover:text-primary" />
+          <Credits stacked className="mb-2 px-3 text-[11px] leading-relaxed" linkClassName="text-foreground/80 hover:text-primary" />
           {/* Account name display — surfaced only when the account
               name differs from the user's own name (see
               `showAccountStrip`). For a default solo account the two

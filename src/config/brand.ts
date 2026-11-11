@@ -37,16 +37,24 @@ export const BRAND = {
     dustyPinkSoft: "#EED5DA",
   },
 
+  /** Designers of Seivio — shown as "Designed by Pranash & Prasanna B". */
   creators: [
-    {
-      name: "Prasanna B",
-      github: "https://github.com/prasannab4362",
-      handle: "prasannab4362",
-    },
     {
       name: "Pranash",
       github: "https://github.com/PRANASH-R",
       handle: "PRANASH-R",
     },
+    {
+      name: "Prasanna B",
+      github: "https://github.com/prasannab4362",
+      handle: "prasannab4362",
+    },
   ] as const satisfies readonly BrandCreator[],
+
+  /** Open-source project Seivio is based on (MIT). Credited in the UI. */
+  basedOn: {
+    name: "wacrm",
+    url: "https://github.com/ArnasDon/wacrm",
+    author: "Arnas Donauskas",
+  },
 } as const;
