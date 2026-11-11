@@ -20,7 +20,6 @@ export const BRAND = {
   tagline: "The WhatsApp CRM for teams that care about every conversation.",
   description:
     "Seivio is a WhatsApp CRM — shared inbox, contacts, sales pipelines, broadcasts, automations and an AI reply assistant on the official WhatsApp Business API.",
-  repoUrl: "https://github.com/prasannab4362/wacrm",
 
   /**
    * Brand palette. Burgundy is the primary, cream the light surface,
@@ -50,11 +49,4 @@ export const BRAND = {
       handle: "prasannab4362",
     },
   ] as const satisfies readonly BrandCreator[],
-
-  /** Open-source project Seivio is based on (MIT). Credited in the UI. */
-  basedOn: {
-    name: "wacrm",
-    url: "https://github.com/ArnasDon/wacrm",
-    author: "Arnas Donauskas",
-  },
 } as const;
