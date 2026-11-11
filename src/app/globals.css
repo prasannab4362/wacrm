@@ -65,8 +65,9 @@
  * THEMING — two orthogonal dimensions
  *
  *   1. MODE   (light / dark)  → neutral surfaces. Selected with
- *      `document.documentElement.dataset.mode`. Defaults to dark.
- *   2. ACCENT (violet / …)    → the primary color only. Selected
+ *      `document.documentElement.dataset.mode`. Defaults to light
+ *      (Seivio cream).
+ *   2. ACCENT (seivio / …)    → the primary color only. Selected
  *      with `document.documentElement.dataset.theme`.
  *
  * The two compose: any accent works in either mode. Neutral
@@ -76,7 +77,7 @@
  * --sidebar-ring) live in the ACCENT blocks. They set disjoint
  * variables, so cascade order between them doesn't matter.
  *
- * `:root` carries the dark-mode + violet defaults so a visitor
+ * `:root` carries the light-mode + seivio defaults so a visitor
  * renders correctly before JS runs; the boot script in
  * layout.tsx replays the saved mode + accent before first paint.
  *
@@ -90,67 +91,72 @@
 
 /* ---- MODE: neutral surfaces ---- */
 
-:root,
+/* Seivio neutrals. Light = cream paper with burgundy-brown ink (the
+ * brand default). Dark = burgundy-tinted night with cream ink. Both
+ * are warm-tinted so every accent theme still sits on Seivio surfaces.
+ * Palette source of truth: src/config/brand.ts. */
+
 html[data-mode="dark"] {
-  --background: oklch(0.13 0.01 260);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.18 0.01 260);
-  --card-2: oklch(0.205 0.01 260);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.18 0.01 260);
-  --popover-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.22 0.01 260);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.22 0.01 260);
-  --muted-foreground: oklch(0.65 0.01 260);
-  --accent: oklch(0.22 0.01 260);
-  --accent-foreground: oklch(0.985 0 0);
+  --background: #170c10;
+  --foreground: #f7f0e6;
+  --card: #211317;
+  --card-2: #2a181e;
+  --card-foreground: #f7f0e6;
+  --popover: #211317;
+  --popover-foreground: #f7f0e6;
+  --secondary: #2e1a20;
+  --secondary-foreground: #f7f0e6;
+  --muted: #2e1a20;
+  --muted-foreground: #c2a9ad;
+  --accent: #3a2028;
+  --accent-foreground: #f7f0e6;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.28 0.01 260);
-  --input: oklch(0.28 0.01 260);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
+  --border: #3d252c;
+  --input: #3d252c;
+  --chart-2: #d8a7b1;
+  --chart-3: #a86b7a;
+  --chart-4: #7a4a57;
+  --chart-5: #4f2f38;
   --radius: 0.625rem;
-  --sidebar: oklch(0.16 0.01 260);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.22 0.01 260);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.28 0.01 260);
+  --sidebar: #1c0f14;
+  --sidebar-foreground: #f7f0e6;
+  --sidebar-accent: #3a2028;
+  --sidebar-accent-foreground: #f7f0e6;
+  --sidebar-border: #3d252c;
   --status-good: #0ca30c;
   --status-warning: #fab219;
   --status-serious: #ec835a;
   --status-critical: #e05252;
 }
 
+:root,
 html[data-mode="light"] {
-  --background: oklch(0.99 0.002 260);
-  --foreground: oklch(0.21 0.01 260);
-  --card: oklch(1 0 0);
-  --card-2: oklch(0.985 0.002 260);
-  --card-foreground: oklch(0.21 0.01 260);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.21 0.01 260);
-  --secondary: oklch(0.967 0.003 260);
-  --secondary-foreground: oklch(0.25 0.01 260);
-  --muted: oklch(0.967 0.003 260);
-  --muted-foreground: oklch(0.52 0.015 260);
-  --accent: oklch(0.96 0.004 260);
-  --accent-foreground: oklch(0.25 0.01 260);
+  --background: #f7f0e6;
+  --foreground: #2a1218;
+  --card: #fffbf5;
+  --card-2: #fbf4ea;
+  --card-foreground: #2a1218;
+  --popover: #fffbf5;
+  --popover-foreground: #2a1218;
+  --secondary: #f1e4d8;
+  --secondary-foreground: #3a1a22;
+  --muted: #f1e6da;
+  --muted-foreground: #74575c;
+  --accent: #eed5da;
+  --accent-foreground: #561127;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0.004 260);
-  --input: oklch(0.922 0.004 260);
-  --chart-2: oklch(0.6 0.1 260);
-  --chart-3: oklch(0.7 0.06 260);
-  --chart-4: oklch(0.8 0.04 260);
-  --chart-5: oklch(0.87 0.03 260);
+  --border: #e7d6c6;
+  --input: #e2cfbe;
+  --chart-2: #d8a7b1;
+  --chart-3: #b97a86;
+  --chart-4: #e3c9b0;
+  --chart-5: #9c6b5e;
   --radius: 0.625rem;
-  --sidebar: oklch(0.985 0.002 260);
-  --sidebar-foreground: oklch(0.21 0.01 260);
-  --sidebar-accent: oklch(0.96 0.004 260);
-  --sidebar-accent-foreground: oklch(0.25 0.01 260);
-  --sidebar-border: oklch(0.922 0.004 260);
+  --sidebar: #fbf4ea;
+  --sidebar-foreground: #2a1218;
+  --sidebar-accent: #eed5da;
+  --sidebar-accent-foreground: #561127;
+  --sidebar-border: #e7d6c6;
   --status-good: #0b7f0b;
   --status-warning: #946100;
   --status-serious: #c2532a;
@@ -159,7 +165,38 @@ html[data-mode="light"] {
 
 /* ---- ACCENT: primary color ---- */
 
+/* Seivio — the brand default. Burgundy primary with dusty-pink
+ * secondary series. In dark mode burgundy is too dim against the night
+ * surfaces, so the primary lifts to a dusty rose with burgundy ink. */
 :root,
+html[data-theme="seivio"] {
+  --primary: #7b1e3a;
+  --primary-foreground: #fffbf5;
+  --primary-hover: #8f2a49;
+  --primary-soft: rgb(123 30 58 / 0.1);
+  --primary-soft-2: rgb(123 30 58 / 0.18);
+  --ring: #7b1e3a;
+  --chart-1: #7b1e3a;
+  --chart-2: #d8a7b1;
+  --sidebar-primary: #7b1e3a;
+  --sidebar-primary-foreground: #fffbf5;
+  --sidebar-ring: #7b1e3a;
+}
+
+html[data-theme="seivio"][data-mode="dark"] {
+  --primary: #d27a8e;
+  --primary-foreground: #2a0e17;
+  --primary-hover: #dc93a3;
+  --primary-soft: rgb(216 167 177 / 0.12);
+  --primary-soft-2: rgb(216 167 177 / 0.2);
+  --ring: #d27a8e;
+  --chart-1: #d27a8e;
+  --chart-2: #f7f0e6;
+  --sidebar-primary: #d27a8e;
+  --sidebar-primary-foreground: #2a0e17;
+  --sidebar-ring: #d27a8e;
+}
+
 html[data-theme="violet"] {
   --primary: oklch(0.526 0.247 293);
   --primary-foreground: oklch(0.985 0 0);

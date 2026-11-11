@@ -6,6 +6,7 @@ import Script from "next/script";
 import "./globals.css";
 import { ThemeProvider } from "@/hooks/use-theme";
 import { ThemedToaster } from "@/components/themed-toaster";
+import { BRAND } from "@/config/brand";
 import {
   DEFAULT_MODE,
   DEFAULT_THEME,
@@ -30,9 +31,13 @@ export async function generateMetadata(): Promise<Metadata> {
 
 const metadata: Metadata = {
   title: {
-    default: "wacrm",
-    template: "%s — wacrm",
+    default: BRAND.name,
+    template: `%s — ${BRAND.name}`,
   },
+  applicationName: BRAND.name,
+  authors: BRAND.creators.map((c) => ({ name: c.name, url: c.github })),
+  creator: BRAND.creators.map((c) => c.name).join(" & "),
+  publisher: BRAND.name,
   robots: {
     index: false,
     follow: false,
@@ -48,8 +53,11 @@ const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#020617",
-  colorScheme: "dark light",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: BRAND.colors.cream },
+    { media: "(prefers-color-scheme: dark)", color: "#170c10" },
+  ],
+  colorScheme: "light dark",
 };
 
 // Inline boot script — runs before React hydrates so the user's

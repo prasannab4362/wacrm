@@ -1,19 +1,30 @@
 {
-  "name": "wacrm",
+  "name": "seivio",
   "version": "0.8.0",
   "private": true,
-  "description": "Self-hostable CRM template for WhatsApp built on Next.js and Supabase — shared inbox, contacts, sales pipelines, broadcasts, and no-code automations.",
+  "description": "Seivio — the WhatsApp CRM for teams that care about every conversation: shared inbox, contacts, sales pipelines, broadcasts, no-code automations and an AI reply assistant. Built on Next.js and Supabase.",
   "license": "MIT",
-  "author": "Arnas Donauskas",
-  "homepage": "https://github.com/ArnasDon/wacrm",
+  "author": "Prasanna B (https://github.com/prasannab4362)",
+  "contributors": [
+    {
+      "name": "Prasanna B",
+      "url": "https://github.com/prasannab4362"
+    },
+    {
+      "name": "Pranash",
+      "url": "https://github.com/PRANASH-R"
+    }
+  ],
+  "homepage": "https://github.com/prasannab4362/wacrm",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ArnasDon/wacrm.git"
+    "url": "git+https://github.com/prasannab4362/wacrm.git"
   },
   "bugs": {
-    "url": "https://github.com/ArnasDon/wacrm/issues"
+    "url": "https://github.com/prasannab4362/wacrm/issues"
   },
   "keywords": [
+    "seivio",
     "crm",
     "whatsapp",
     "whatsapp-business-api",
@@ -21,8 +32,7 @@
     "supabase",
     "automation",
     "broadcast",
-    "self-hosted",
-    "template"
+    "self-hosted"
   ],
   "engines": {
     "node": ">=22.12.0"

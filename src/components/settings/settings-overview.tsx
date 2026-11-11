@@ -12,6 +12,9 @@ import { CURRENCIES } from '@/lib/currency';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
+import { BRAND } from '@/config/brand';
+import { BrandMark } from '@/components/brand/brand-mark';
+import { Credits } from '@/components/brand/credits';
 
 import { SECTION_META, type SettingsSection } from './settings-sections';
 import { SettingsChip, StatusDot } from './settings-chip';
@@ -285,6 +288,29 @@ export function SettingsOverview({
           );
         })}
       </div>
+
+      {/* About Seivio */}
+      <Card className="mt-6 flex flex-col gap-4 border-border bg-card p-5 sm:flex-row sm:items-center">
+        <BrandMark className="size-12" />
+        <div className="min-w-0 flex-1">
+          <p className="text-sm font-semibold text-foreground">{BRAND.name}</p>
+          <p className="mt-0.5 text-xs text-muted-foreground">{BRAND.tagline}</p>
+          <Credits className="mt-2" linkClassName="text-primary" />
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {BRAND.creators.map((c) => (
+            <a
+              key={c.handle}
+              href={c.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card-2 px-3 py-1 text-xs font-medium text-foreground transition-colors hover:border-primary-soft-2 hover:text-primary"
+            >
+              @{c.handle}
+            </a>
+          ))}
+        </div>
+      </Card>
     </section>
   );
 }

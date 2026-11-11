@@ -9,9 +9,10 @@ that standard.
 ## Reporting
 
 If you witness or experience behaviour that violates the Code, please
-report it privately to the project maintainer:
+report it privately to the project maintainers:
 
-- Email: **a.donauskas@hostinger.com** with `[CRM template conduct]` in
+- Message the maintainers on GitHub — [Prasanna B](https://github.com/prasannab4362)
+  or [Pranash](https://github.com/PRANASH-R) — with `[Seivio conduct]` in
   the subject.
 
 Reports are handled confidentially. Expect an acknowledgement within

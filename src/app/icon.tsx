@@ -1,18 +1,17 @@
 import { ImageResponse } from "next/og";
+import { BRAND } from "@/config/brand";
 
-// Replaces the default Next.js favicon with the brand mark — Hostinger
-// violet rounded square + white chat-square glyph — matching the
-// sidebar logo in `src/components/layout/sidebar.tsx`. Next.js renders
-// this at build time and auto-injects <link rel="icon"> into <head>.
-//
-// This route takes precedence over src/app/favicon.ico, which is the
-// Next.js default and can stay on disk harmlessly (or be removed).
+// Seivio favicon — the same mark as `BrandMark` in
+// `src/components/brand/brand-mark.tsx`: burgundy rounded square,
+// cream speech bubble, dusty-pink "S" swirl. Next.js renders this at
+// build time and auto-injects <link rel="icon"> into <head>.
 
 export const runtime = "edge";
 export const size = { width: 32, height: 32 };
 export const contentType = "image/png";
 
 export default function Icon() {
+  const { burgundy, cream, dustyPink } = BRAND.colors;
   return new ImageResponse(
     (
       <div
@@ -22,21 +21,23 @@ export default function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#7c3aed", // primary (Hostinger-aligned purple)
-          borderRadius: 6,
+          background: burgundy,
+          borderRadius: 8,
         }}
       >
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#ffffff"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+        <svg width="32" height="32" viewBox="0 0 32 32">
+          <path
+            d="M8 9.5A2.5 2.5 0 0 1 10.5 7h11A2.5 2.5 0 0 1 24 9.5v8a2.5 2.5 0 0 1-2.5 2.5H14l-4.6 3.8c-.5.4-1.4.1-1.4-.6V9.5Z"
+            fill={cream}
+          />
+          <path
+            d="M19.2 10.6c-.6-.5-1.5-.8-2.6-.8-1.8 0-3 .9-3 2.2 0 1.2.9 1.7 2.5 2.1 1.1.3 1.5.5 1.5 1 0 .5-.6.9-1.5.9-.9 0-1.7-.3-2.3-.9"
+            fill="none"
+            stroke={dustyPink}
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
         </svg>
       </div>
     ),
