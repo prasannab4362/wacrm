@@ -20,7 +20,6 @@ export const BRAND = {
   tagline: "The WhatsApp CRM for teams that care about every conversation.",
   description:
     "Seivio is a WhatsApp CRM — shared inbox, contacts, sales pipelines, broadcasts, automations and an AI reply assistant on the official WhatsApp Business API.",
-  repoUrl: "https://github.com/prasannab4362/wacrm",
 
   /**
    * Brand palette. Burgundy is the primary, cream the light surface,
@@ -37,16 +36,17 @@ export const BRAND = {
     dustyPinkSoft: "#EED5DA",
   },
 
+  /** Designers of Seivio — shown as "Designed by Pranash & Prasanna B". */
   creators: [
-    {
-      name: "Prasanna B",
-      github: "https://github.com/prasannab4362",
-      handle: "prasannab4362",
-    },
     {
       name: "Pranash",
       github: "https://github.com/PRANASH-R",
       handle: "PRANASH-R",
+    },
+    {
+      name: "Prasanna B",
+      github: "https://github.com/prasannab4362",
+      handle: "prasannab4362",
     },
   ] as const satisfies readonly BrandCreator[],
 } as const;

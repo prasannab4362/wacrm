@@ -10,8 +10,9 @@
 </p>
 
 <p align="center">
-  Built by <a href="https://github.com/prasannab4362"><strong>Prasanna B</strong></a>
-  &amp; <a href="https://github.com/PRANASH-R"><strong>Pranash</strong></a>
+  Designed by <a href="https://github.com/PRANASH-R"><strong>Pranash</strong></a>
+  &amp; <a href="https://github.com/prasannab4362"><strong>Prasanna B</strong></a><br>
+  Based on <a href="https://github.com/ArnasDon/wacrm">wacrm</a> by Arnas Donauskas
 </p>
 
 <p align="center">
@@ -97,16 +98,17 @@ For containers see [docs/docker.md](./docs/docker.md).
 - **Data** — Supabase (Postgres + Auth + Storage + Realtime + RLS).
 - **WhatsApp** — Meta Cloud API (official WhatsApp Business API).
 
-## Team
+## Designed by
 
 | | |
 |---|---|
-| **Prasanna B** | [github.com/prasannab4362](https://github.com/prasannab4362) |
 | **Pranash** | [github.com/PRANASH-R](https://github.com/PRANASH-R) |
+| **Prasanna B** | [github.com/prasannab4362](https://github.com/prasannab4362) |
 
 ## Credits & license
 
-Seivio is built on the open-source
-[wacrm](https://github.com/ArnasDon/wacrm) template by Arnas Donauskas,
-used under the MIT License. Seivio's changes are © 2026 Prasanna B and
-Pranash, also under [MIT](./LICENSE).
+Seivio is designed by Pranash and Prasanna B and is based on the
+open-source [wacrm](https://github.com/ArnasDon/wacrm) template by
+Arnas Donauskas, used under the MIT License. Thanks to the wacrm project
+for the foundation. Seivio's changes are © 2026 Pranash and Prasanna B,
+also under [MIT](./LICENSE).
