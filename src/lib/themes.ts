@@ -14,6 +14,7 @@
  */
 
 export const THEME_IDS = [
+  "seivio",
   "violet",
   "emerald",
   "cobalt",
@@ -23,18 +24,18 @@ export const THEME_IDS = [
 
 export type ThemeId = (typeof THEME_IDS)[number];
 
-export const DEFAULT_THEME: ThemeId = "violet";
+export const DEFAULT_THEME: ThemeId = "seivio";
 
-export const STORAGE_KEY = "wacrm.theme";
+export const STORAGE_KEY = "seivio.theme";
 
 /**
  * MODE — the light/dark dimension, orthogonal to the accent theme.
  *
  * The CSS variables live in `src/app/globals.css` under
  * `html[data-mode="..."]` blocks (neutral surfaces only). Applied
- * at runtime via `document.documentElement.dataset.mode`. Dark is
- * the historical default and stays the app's identity; light is the
- * opt-in eye-strain-friendly alternative.
+ * at runtime via `document.documentElement.dataset.mode`. Light
+ * (Seivio cream) is the brand default; dark is a burgundy-tinted
+ * night mode.
  *
  * Persisted under its own localStorage key so it composes freely
  * with the accent choice (you can run Violet-light or Violet-dark).
@@ -43,9 +44,9 @@ export const MODES = ["light", "dark"] as const;
 
 export type Mode = (typeof MODES)[number];
 
-export const DEFAULT_MODE: Mode = "dark";
+export const DEFAULT_MODE: Mode = "light";
 
-export const MODE_STORAGE_KEY = "wacrm.mode";
+export const MODE_STORAGE_KEY = "seivio.mode";
 
 export function isMode(value: unknown): value is Mode {
   return (
@@ -68,9 +69,15 @@ export interface ThemeMeta {
 
 export const THEMES: ReadonlyArray<ThemeMeta> = [
   {
+    id: "seivio",
+    name: "Seivio",
+    tagline: "The default — burgundy, cream and dusty pink.",
+    swatch: "#7b1e3a",
+  },
+  {
     id: "violet",
     name: "Violet",
-    tagline: "The default — confident, slightly playful.",
+    tagline: "Confident, slightly playful.",
     swatch: "oklch(0.526 0.247 293)",
   },
   {

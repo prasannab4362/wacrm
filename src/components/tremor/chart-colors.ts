@@ -14,6 +14,20 @@
 export type ColorUtility = "bg" | "stroke" | "fill" | "text"
 
 export const chartColors = {
+  // Seivio brand series — follow the active theme tokens (burgundy
+  // primary, dusty-pink chart-2) so charts match light and dark mode.
+  brand: {
+    bg: "bg-primary",
+    stroke: "stroke-primary",
+    fill: "fill-primary",
+    text: "text-primary",
+  },
+  blush: {
+    bg: "bg-chart-2",
+    stroke: "stroke-chart-2",
+    fill: "fill-chart-2",
+    text: "text-chart-2",
+  },
   blue: {
     bg: "bg-blue-500",
     stroke: "stroke-blue-500",

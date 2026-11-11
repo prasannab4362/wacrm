@@ -1,20 +1,30 @@
 {
-  "name": "wacrm-mcp",
+  "name": "seivio-mcp",
   "version": "0.1.1",
-  "mcpName": "io.github.ArnasDon/wacrm-mcp",
-  "description": "Model Context Protocol (MCP) server for wacrm — drive your self-hosted WhatsApp CRM from Claude, Cursor, and other MCP clients.",
+  "mcpName": "io.github.prasannab4362/seivio-mcp",
+  "description": "Model Context Protocol (MCP) server for Seivio — drive your Seivio WhatsApp CRM from Claude, Cursor, and other MCP clients.",
   "license": "MIT",
-  "author": "Arnas Donauskas",
-  "homepage": "https://github.com/ArnasDon/wacrm",
+  "author": "Prasanna B (https://github.com/prasannab4362)",
+  "contributors": [
+    {
+      "name": "Prasanna B",
+      "url": "https://github.com/prasannab4362"
+    },
+    {
+      "name": "Pranash",
+      "url": "https://github.com/PRANASH-R"
+    }
+  ],
+  "homepage": "https://github.com/prasannab4362/wacrm",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ArnasDon/wacrm.git",
+    "url": "git+https://github.com/prasannab4362/wacrm.git",
     "directory": "mcp-server"
   },
   "keywords": [
     "mcp",
     "model-context-protocol",
-    "wacrm",
+    "seivio",
     "whatsapp",
     "crm",
     "claude",
@@ -25,7 +35,7 @@
     "node": ">=22.0.0"
   },
   "bin": {
-    "wacrm-mcp": "./dist/index.js"
+    "seivio-mcp": "./dist/index.js"
   },
   "files": [
     "dist",
